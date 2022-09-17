@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', ['data' => AuthorController::getAll()]);
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard', ['data' => AuthorController::getAll()]);
+});
+
+Route::get('/dashboard/author/create', function () {
+    return view('dashboard', ['data' => AuthorController::getAll()]);
+})->name('createAuthor');
+
