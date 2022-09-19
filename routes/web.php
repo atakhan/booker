@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\WebController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,14 +15,18 @@ use App\Http\Controllers\AuthorController;
 */
 
 Route::get('/', function () {
-    return view('welcome', ['data' => AuthorController::getAll()]);
-});
+    return view('welcome', ['data' => WebController::getBooks()]);
+})->name('welcome');
 
 Route::get('/dashboard', function () {
-    return view('dashboard', ['data' => AuthorController::getAll()]);
-});
+    return view('dashboard', ['data' => 
+        [
+            'books' => WebController::getBooks(),
+            'authors' => WebController::getAuthors()
+        ]
+    ]);
+})->name('dashboard');
 
 Route::get('/dashboard/author/create', function () {
-    return view('dashboard', ['data' => AuthorController::getAll()]);
-})->name('createAuthor');
-
+    return view('dashboard', ['data' => WebController::getBooks()]);
+})->name('addAuthor');
