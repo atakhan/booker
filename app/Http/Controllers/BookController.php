@@ -95,7 +95,7 @@ class BookController extends Controller
         if ($book->update($data)) {
             $result = [
                 "status" => "success",
-                "message" => "Book successfully edited"
+                "message" => "Book successfully updated"
             ];
         } else {
             $result = [

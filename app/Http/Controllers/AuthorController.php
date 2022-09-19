@@ -65,12 +65,12 @@ class AuthorController extends Controller
         if ($author->update($request->only(['name']))) {
             $result = [
                 "status" => "success",
-                "message" => "Author successfully removed"
+                "message" => "Author successfully updated"
             ];
         } else {
             $result = [
                 "status" => "error",
-                "message" => "Cannot delete an author"
+                "message" => "Cannot update an author"
             ];
         }
         return json_encode($result);
