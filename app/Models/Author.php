@@ -9,6 +9,7 @@ use App\Models\Book;
 class Author extends Model
 {
     use HasFactory;
+    protected $fillable = ['name'];
 
     public function books()
     {
