@@ -27,6 +27,3 @@ Route::get('/dashboard', function () {
     ]);
 })->name('dashboard');
 
-Route::get('/dashboard/author/create', function () {
-    return view('dashboard', ['data' => WebController::getBooks()]);
-})->name('addAuthor');
