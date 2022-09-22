@@ -29,7 +29,7 @@
 
 - Заполнить таблицы тестовыми данными
 
-        php artisan seed:all
+        php artisan db:seed
 
 - Запустить сборку css, js
 
